@@ -1,3 +1,4 @@
+# O(N) time | O(N) space
 def two_sum(nums, target):
   lookup = {}
   N = len(nums)
