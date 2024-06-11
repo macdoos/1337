@@ -1,4 +1,4 @@
-# O(N) time | O(N) space
+# O(N) time | O(N) space | hashmap
 def twoNumberSum(array, targetSum):
     N = len(array)
     nums = {}

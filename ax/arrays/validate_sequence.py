@@ -1,4 +1,4 @@
-# O(N) space | O(1) time
+# O(N) space | O(1) time | two pointers
 def isValidSubsequence(array, sequence):
     arrIdx = 0
     seqIdx = 0
