@@ -1,0 +1,161 @@
+<style>
+  :root {
+  --wrapper-border-radius: 12px;
+  --wrapper-padding: 12px;
+  --wrapper-background-color: #e0e0e0;
+
+  --circle-width: 30px;
+  --circle-radius: calc(var(--circle-width) / 2);
+  --circle-border-width: 4px;
+  --circle-bottom-margin: 8px;
+  --circle-font-size: 24px;
+
+  --selected-background-color: #279600;
+
+  --divider-line-height: 4px;
+
+  --product-offering-height: 40px;
+  --product-offering-padding: 12px;
+  --product-offering-vertical-margin: 12px;
+  --product-offering-border-radius: 8px;
+  --product-offering-left-border-size: 5px;
+
+  --label-left-margin: 4px;
+  --blue-product-color: #626ee3;
+  --red-product-color: #890023;
+  --orange-product-color: #f37f1b;
+  --green-product-color: #11967e;
+
+  --button-padding: 12px;
+  --button-font-size: 16px;
+  --button-border-radius: 8px;
+  --button-background-color: #02203c;
+  }
+
+  #wrapper {
+    background-color: var(--wrapper-background-color);
+    border-radius: var(--wrapper-border-radius);
+    padding: var(--wrapper-padding);
+  }
+
+  ol, ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  ol {
+    display: flex;
+    counter-reset: list-items;
+  }
+
+  ol > li {
+    flex-basis: 100%;
+    position: relative;
+    text-align: center;
+  }
+
+  ol > li::before {
+    align-items: center;
+    background-color: white;
+    border: var(--circle-border-width) solid black;
+    border-radius: 50%;
+    content: counter(list-items);
+    counter-increment: list-items;
+    display: flex;
+    font-size: var(--circle-font-size);
+    height: var(--circle-width);
+    justify-content: center;
+    margin: 0 auto var(--circle-bottom-margin);
+    width: var(--circle-width);
+  }
+
+  ol > li:not(:first-of-type)::after {
+    background-color: black;
+    content: "";
+    display: block;
+    height: var(--divider-line-height);
+    left: calc(-50% + var(--circle-radius));
+    position: absolute;
+    top: calc(var(--circle-radius) + var(--circle-border-width) - var(--divider-line-height) / 2);
+    width: calc(100% - var(--circle-width));
+  }
+
+  .selected::before {
+    background-color: var(--selected-background-color);
+    color: white;
+  }
+
+  ul > li {
+    align-items: center;
+    background-color: white;
+    border-left: var(--product-offering-left-border-size) solid var(--primary-color);
+    border-radius: var(--product-offering-border-radius);
+    color: var(--primary-color);
+    display: flex;
+    font-weight: bold;
+    height: var(--product-offering-height);
+    margin: var(--product-offering-vertical-margin) 0;
+    padding: var(--product-offering-padding);
+  }
+
+  label {
+    margin-left: var(--label-left-margin);
+  }
+
+  .blue-product {
+    --primary-color: var(--blue-product-color);
+  }
+
+  .red-product {
+    --primary-color: var(--red-product-color);
+  }
+
+  .orange-product {
+    --primary-color: var(--orange-product-color);
+  }
+
+  .green-product {
+    --primary-color: var(--green-product-color);
+  }
+
+  button {
+    background-color: var(--button-background-color);
+    border-radius: var(--button-border-radius);
+    color: white;
+    display: block;
+    font-size: var(--button-font-size);
+    margin-left: auto;
+    padding: var(--button-padding);
+  }
+</style>
+<body>
+      <div id="wrapper">
+  <ol>
+    <li class="selected">Product Selection</li>
+    <li>Payment Method</li>
+    <li>Payment Form</li>
+    <li>Purchase Success</li>
+  </ol>
+
+  <ul>
+    <li class="blue-product">
+      <input type="checkbox" id="algoexpert">
+      <label for="algoexpert">AlgoExpert</label>
+    </li>
+    <li class="red-product">
+      <input type="checkbox" id="systemsexpert">
+      <label for="systemsexpert">SystemsExpert</label>
+    </li>
+    <li class="orange-product">
+      <input type="checkbox" id="mlexpert">
+      <label for="mlexpert">MLExpert</label>
+    </li>
+    <li class="green-product">
+      <input type="checkbox" id="frontendexpert">
+      <label for="frontendexpert">FrontendExpert</label>
+    </li>
+  </ul>
+
+  <button>Continue</button>
+</div>  
+</body>
