@@ -1,0 +1,97 @@
+<style>
+
+#wrapper {
+  width: 280px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: lightgrey;
+}
+
+h1 {
+  text-align: center;
+  margin: 0 0 10px 0;
+  text-decoration: underline;
+}
+
+#notifications {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.notification {
+  display: grid;
+  grid-template-areas:
+    'photo text'
+    'photo time';
+  gap: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.time {
+  grid-area: time;
+  align-self: end;
+  justify-self: end;
+  margin: 0;
+  font-size: 12px;
+  font-style: italic;
+}
+
+p {
+  grid-area: text;
+  margin: 0;
+}
+
+img {
+  grid-area: photo;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 1px solid black;
+}
+
+.user {
+  font-weight: bold;
+}
+
+button {
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 16px;
+  background-color: #02203c;
+  color: white;
+}
+
+</style>
+<div id="wrapper">
+  <h1>Notifications</h1>
+
+  <div id="notifications">
+    <div class="notification">
+      <img src="https://assets.algoexpert.io/course-assets/frontendexpert/clement.png" alt="Clement Mihailescu">
+      <p><span class="user">Clement Mihailescu</span> commented on your recent post.</p>
+      <span class="time">15 minutes ago</span>
+    </div>
+
+    <div class="notification">
+      <img src="https://assets.algoexpert.io/course-assets/frontendexpert/conner.png" alt="Conner Ardman">
+      <p><span class="user">Conner Ardman</span> shared a new photo.</p>
+      <span class="time">3 hours ago</span>
+    </div>
+
+    <div class="notification">
+      <img src="https://assets.algoexpert.io/course-assets/frontendexpert/antoine.png" alt="Antoine Pourchet">
+      <p>
+        Congratulate <span class="user">Antoine Pourchet</span> for starting a new position as CTO
+        at AlgoExpert.
+      </p>
+      <span class="time">5 years ago</span>
+    </div>
+  </div>
+
+  <button>View More</button>
+</div>

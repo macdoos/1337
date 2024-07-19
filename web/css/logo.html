@@ -1,0 +1,46 @@
+<style>
+#wrapper {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  padding-left: 50px;
+  background-color: #02203c;
+}
+
+#logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10px;
+  height: 10px;
+  border: 5px solid white;
+  border-radius: 50%;
+}
+
+#logo::before, #logo::after {
+  position: absolute;
+  content: '';
+  width: 100px;
+  height: 30px;
+  border: 5px solid white;
+  border-radius: 50%;
+}
+
+#logo::before {
+  transform: rotate(45deg);
+}
+
+#logo::after {
+  transform: rotate(-45deg);
+}
+
+h1 {
+  color: white;
+  font-family: monospace;
+  font-size: 48px;
+}
+</style>
+<div id="wrapper">
+  <div id="logo"></div>
+  <h1>AlgoExpert</h1>
+</div>
