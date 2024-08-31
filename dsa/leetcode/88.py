@@ -1,3 +1,4 @@
+# O(n+m) time | O(1) space
 def merge(nums1, m, nums2, n):
   x, y = m - 1, n - 1
 
