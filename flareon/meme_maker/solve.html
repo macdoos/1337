@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Meme Maker Simulation</title>
+</head>
+<body>
+    <h1>Simulated Meme Maker to get the flag</h1>
+
+    <p>
+        Usage
+        Select "Boyfriend" as the meme template.
+        Set caption1 to "FLARE On", caption2 to "Security Expert", and caption3 to "Malware".
+        The alert will trigger if these conditions are met, displaying "Congratulations " with the constructed f string.
+    </p>
+
+    <!-- Elements for captions -->
+    <div id="caption1" contenteditable="true">FLARE On</div>
+    <div id="caption2" contenteditable="true">Security Expert</div>
+    <div id="caption3" contenteditable="true">Malware</div>
+
+    <select id="meme-template">
+        <option value="doge1">Doge</option>
+        <option value="boy_friend0">Boyfriend</option>
+        <option value="drake">Drake</option>
+        <option value="two_buttons">Two Buttons</option>
+    </select>
+
+    <script>
+        // Array of captions to choose from
+        const a0c = [
+            "When you find a buffer overflow in legacy code", 
+            "Reverse Engineer", 
+            "When you decompile the obfuscated code and it makes perfect sense", 
+            "Me after a week of reverse engineering", 
+            "When your decompiler crashes", 
+            "It's not a bug, it's a feature", 
+            "Security 'Expert'", 
+            "AI", 
+            "That's great, but can you hack it?", 
+            "When your code compiles for the first time", 
+            "If it ain't broke, break it", 
+            "Reading someone else's code", 
+            "EDR", 
+            "This is fine", 
+            "FLARE On", 
+            "It's always DNS", 
+            "strings.exe", 
+            "Don't click on that.", 
+            "When you find the perfect 0-day exploit", 
+            "Security through obscurity", 
+            "Instant Coffee", 
+            "H@x0r", 
+            "Malware", 
+            "$1,000,000", 
+            "IDA Pro", 
+            "Security Expert"
+        ];
+
+        // Sample object to map template names to specific styles
+        const a0d = {
+            doge1: [["10px", "20px"], ["15px", "25px"]],
+            boy_friend0: [["5px", "30px"], ["8px", "35px"], ["12px", "40px"]],
+            drake: [["20px", "10px"], ["30px", "15px"]],
+            two_buttons: [["25px", "12px"], ["18px", "22px"]]
+        };
+
+        // Set up meme template and captions
+        function a0f() {
+            const templateSelect = document.getElementById("meme-template");
+            const template = templateSelect.value;
+            const captions = a0d[template];
+
+            // Assign captions to caption elements
+            captions.forEach((caption, index) => {
+                const captionElement = document.getElementById("caption" + (index + 1));
+                captionElement.hidden = false;
+                captionElement.style.top = caption[0];
+                captionElement.style.left = caption[1];
+                captionElement.textContent = a0c[Math.floor(Math.random() * a0c.length)];
+            });
+        }
+
+        // Construct special string `f` and trigger alert if conditions are met
+        function a0k() {
+            const a = document.getElementById("meme-template").value;
+            const b = document.getElementById("caption1").textContent;
+            const c = document.getElementById("caption2").textContent;
+            const d = document.getElementById("caption3").textContent;
+
+            // Conditions to check before constructing the alert
+            if (a === "boy_friend0" && b === "FLARE On" && c === "Security Expert" && d === "Malware") {
+                // Construct `f` based on specific indices
+                const f = d[3] + 'h' + a[10] + b[2] + a[3] + c[5] + c[c.length - 1] + '5' +
+                          a[3] + '4' + a[3] + c[2] + c[4] + c[3] + '3' + d[2] + a[3] + 'j4' +
+                          a0c[1][2] + d[4] + '5' + c[2] + d[5] + '1' + c[11] + '7' + 
+                          a0c[21][1] + b.split(' ').join('-') + a[11] + a0c[4].substring(12, 15);
+
+                // Display the alert with the secret message
+                alert("Congratulations " + f.toUpperCase());
+            }
+        }
+
+        // Initialize meme template and add event listeners for input
+        document.getElementById("meme-template").addEventListener("change", a0f);
+        document.getElementById("caption1").addEventListener("keyup", a0k);
+        document.getElementById("caption2").addEventListener("keyup", a0k);
+        document.getElementById("caption3").addEventListener("keyup", a0k);
+
+        // Run initial setup
+        a0f();
+    </script>
+</body>
+</html>
+
+
